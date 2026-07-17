@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #2f6b4f;
+  --color-primary-dark: #1a4030;
+  --color-primary-light: #3d8a66;
+  --color-accent: #c9a227;
+  --color-accent-light: #e4c04a;
+  --color-accent-dark: #a6851a;
+  --color-surface: #f6f8f5;
+  --color-surface-alt: #e8efe9;
+  --color-text: #1a1f1c;
+  --color-text-muted: #4a554f;
+  --color-border: #d8e3dc;
+  --font-sans: var(--font-montserrat);
+  --font-display: var(--font-montserrat);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-text);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(47, 107, 79, 0.15);
+  color: var(--color-primary-dark);
+}
+
+.section-padding {
+  @apply py-20 md:py-28;
+}
+
+.section-eyebrow {
+  @apply inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-primary;
+}
+
+.section-title {
+  @apply text-3xl font-extrabold tracking-tight text-primary-dark md:text-4xl lg:text-[2.75rem] lg:leading-tight;
+}
+
+.section-subtitle {
+  @apply mt-4 text-lg leading-relaxed text-text-muted md:text-xl;
+}
+
+.section-divider {
+  @apply mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-accent via-accent-light to-accent;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary-light px-7 py-3.5 font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30;
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-light px-7 py-3.5 font-bold text-primary-dark shadow-lg shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl;
+}
+
+.btn-whatsapp {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-7 py-3.5 font-bold text-white shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20bd5a] hover:shadow-xl;
+}
+
+.card {
+  @apply rounded-2xl border border-border/80 bg-white shadow-[0_4px_24px_rgba(26,64,47,0.06)] transition-all duration-300;
+}
+
+.card-hover {
+  @apply hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_12px_40px_rgba(26,64,47,0.12)];
+}
+
+.card-premium {
+  @apply rounded-2xl border border-white/80 bg-white shadow-[0_8px_40px_rgba(26,64,47,0.12)] backdrop-blur-sm;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-border bg-surface/50 px-4 py-3.5 text-sm outline-none transition-all duration-200 placeholder:text-text-muted/60 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10;
+}
+
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(47, 107, 79, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 60%, var(--color-accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <clipPath id="emblem-clip-light">
+      <circle cx="40" cy="40" r="36" />
+    </clipPath>
+    <filter id="emblem-invert" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" />
+    </filter>
+  </defs>
+  <circle cx="40" cy="40" r="37" fill="rgba(255,255,255,0.12)" stroke="#fff" stroke-width="2.5" />
+  <g clip-path="url(#emblem-clip-light)" filter="url(#emblem-invert)">
+    <image
+      xlink:href="/images/logos/predial.png"
+      x="2"
+      y="2"
+      width="174"
+      height="76"
+      preserveAspectRatio="xMinYMid meet"
+    />
+  </g>
+</svg>

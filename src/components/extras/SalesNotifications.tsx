@@ -39,7 +39,7 @@ export function SalesNotifications() {
           className="fixed bottom-24 left-4 z-50 max-w-xs rounded-2xl border border-border bg-white p-4 shadow-xl md:left-6"
         >
           <div className="flex items-start gap-3">
-            <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
+            <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
             <div>
               <p className="text-sm font-bold text-primary-dark">
                 {current.name} <span className="font-normal text-text-muted">· {current.city}</span>

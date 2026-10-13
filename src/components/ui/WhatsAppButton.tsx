@@ -1,6 +1,6 @@
 "use client";
 
-import { siteConfig, whatsappUrl } from "@/lib/site";
+import { whatsappMessageOrcamentoGeral, whatsappUrl } from "@/lib/site";
 
 type WhatsAppButtonProps = {
   message?: string;
@@ -9,7 +9,7 @@ type WhatsAppButtonProps = {
 };
 
 export function WhatsAppButton({
-  message = `Olá! Vim pelo site da ${siteConfig.name} e gostaria de solicitar um orçamento.`,
+  message = whatsappMessageOrcamentoGeral(),
   className = "",
   label,
 }: WhatsAppButtonProps) {
@@ -21,7 +21,7 @@ export function WhatsAppButton({
       className={
         label
           ? className
-          : `fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 ${className}`
+          : `fixed bottom-20 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 md:bottom-6 ${className}`
       }
       aria-label="WhatsApp"
     >

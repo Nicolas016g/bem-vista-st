@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw import from client zips (curated copies live in produtos/galeria/brand)
+/public/images/_import/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

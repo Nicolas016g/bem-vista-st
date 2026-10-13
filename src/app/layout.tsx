@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Bem Vista Persianas | São Carlos",
   description:
-    "Persianas, toldos, rede de proteção e tela mosquiteira em São Carlos. Instalação profissional, manutenção, higienização e orçamento pelo WhatsApp.",
+    "Bem Vista Persianas — soluções sob medida em São Carlos. Atendimento comercial institucional e captação de leads pelo WhatsApp.",
   keywords: [
     "Bem Vista",
     "persianas São Carlos",

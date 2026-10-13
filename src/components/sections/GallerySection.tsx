@@ -3,53 +3,11 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { galleryPhotos } from "@/lib/site";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { SectionHeader } from "../ui/SectionHeader";
 
-const photos = [
-  {
-    src: "/images/galeria/01-fachada.webp",
-    alt: "Perspectiva do Residencial Caribe",
-    label: "Perspectiva do empreendimento",
-    width: 1024,
-    height: 1536,
-  },
-  {
-    src: "/images/galeria/02-brinquedoteca.png",
-    alt: "Brinquedoteca do Residencial Caribe",
-    label: "Brinquedoteca",
-    width: 683,
-    height: 1024,
-  },
-  {
-    src: "/images/hero-caribe.jpg",
-    alt: "Fachada Residencial Caribe",
-    label: "Fachada do empreendimento",
-    width: 1600,
-    height: 700,
-  },
-  {
-    src: "/images/plantas/tipo-a.jpg",
-    alt: "Planta Tipo A",
-    label: "Planta Tipo A",
-    width: 800,
-    height: 800,
-  },
-  {
-    src: "/images/plantas/garden-a.jpg",
-    alt: "Planta Garden A",
-    label: "Planta Garden A",
-    width: 800,
-    height: 800,
-  },
-  {
-    src: "/images/implantacao-caribe.webp",
-    alt: "Implantação do empreendimento",
-    label: "Implantação",
-    width: 800,
-    height: 800,
-  },
-];
+const photos = galleryPhotos;
 
 export function GallerySection() {
   const [active, setActive] = useState(0);
@@ -90,14 +48,16 @@ export function GallerySection() {
     };
   }, [lightboxOpen, closeLightbox, prev, next]);
 
+  if (!photos.length) return null;
+
   return (
-    <section id="fotos" className="section-padding bg-surface">
+    <section id="galeria" className="section-padding bg-surface">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <ScrollReveal>
           <SectionHeader
             eyebrow="Galeria"
-            title="Fotos do projeto"
-            subtitle="Clique na imagem para ampliar e conferir todos os detalhes."
+            title="Projetos instalados"
+            subtitle="Confira ambientes reais atendidos pela equipe Bem Vista em São Carlos e região."
             align="center"
           />
         </ScrollReveal>
@@ -117,6 +77,7 @@ export function GallerySection() {
                 fill
                 className="object-contain object-center bg-surface"
                 sizes="(max-width: 768px) 100vw, 1280px"
+                unoptimized
                 priority={active === 0}
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary-dark/80 to-transparent px-6 py-5">
@@ -146,24 +107,29 @@ export function GallerySection() {
             </button>
           </div>
 
-          <div className="mt-5 grid grid-cols-3 gap-2 sm:grid-cols-6">
+          <div className="mt-5 flex gap-2 overflow-x-auto pb-2 sm:grid sm:grid-cols-6 sm:overflow-visible">
             {photos.map((photo, i) => (
               <button
                 key={photo.src}
                 type="button"
                 onClick={() => setActive(i)}
                 onDoubleClick={() => openLightbox(i)}
-                className={`relative aspect-[4/3] overflow-hidden rounded-lg border-2 transition-all ${
+                className={`relative aspect-[4/3] min-w-[4.5rem] shrink-0 overflow-hidden rounded-lg border-2 transition-all sm:min-w-0 ${
                   i === active ? "border-primary ring-2 ring-primary/20" : "border-border opacity-70 hover:opacity-100"
                 }`}
                 aria-label={photo.label}
               >
-                <Image src={photo.src} alt={photo.alt} fill className="object-contain bg-surface" sizes="120px" />
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover bg-surface"
+                  sizes="120px"
+                  unoptimized
+                />
               </button>
             ))}
           </div>
-
-          <p className="mt-4 text-center text-xs text-text-muted">* Imagens meramente ilustrativas</p>
         </ScrollReveal>
       </div>
 
@@ -212,15 +178,17 @@ export function GallerySection() {
             className="relative flex h-full w-full max-h-[90vh] max-w-6xl flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              key={`lightbox-${current.src}`}
-              src={current.src}
-              alt={current.alt}
-              width={current.width}
-              height={current.height}
-              className="max-h-[80vh] w-auto max-w-full object-contain"
-              sizes="100vw"
-            />
+            <div className="relative h-[80vh] w-full max-w-6xl">
+              <Image
+                key={`lightbox-${current.src}`}
+                src={current.src}
+                alt={current.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                unoptimized
+              />
+            </div>
             <p className="mt-4 text-center text-sm font-semibold text-white/90">{current.label}</p>
             <p className="mt-1 text-center text-xs text-white/50">
               Use as setas do teclado ou clique fora para fechar

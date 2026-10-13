@@ -1,17 +1,8 @@
 "use client";
 
-import { Loader2, Lock, MessageCircle, Blinds } from "lucide-react";
+import { Loader2, Lock, MessageCircle } from "lucide-react";
 import { useState } from "react";
-import { whatsappUrl } from "@/lib/site";
-
-const productOptions = [
-  { value: "persianas", label: "Persianas" },
-  { value: "toldos", label: "Toldos" },
-  { value: "rede", label: "Rede de proteção" },
-  { value: "mosquiteira", label: "Tela mosquiteira" },
-  { value: "manutencao", label: "Manutenção / higienização" },
-  { value: "outro", label: "Outro assunto" },
-] as const;
+import { copy, productCatalog, whatsappMessageFormulario, whatsappUrl } from "@/lib/site";
 
 interface LeadFormProps {
   id?: string;
@@ -23,8 +14,8 @@ interface LeadFormProps {
 
 export function LeadForm({
   id = "lead-form",
-  title = "Solicite seu orçamento",
-  subtitle = "Preencha e fale direto com nossa equipe pelo WhatsApp.",
+  title = copy.formTitle,
+  subtitle = copy.formSubtitle,
   compact = false,
   className = "",
 }: LeadFormProps) {
@@ -37,35 +28,39 @@ export function LeadForm({
     const form = new FormData(e.currentTarget);
     const nome = String(form.get("nome") ?? "");
     const telefone = String(form.get("telefone") ?? "");
-    const produto = productOptions.find((p) => p.value === form.get("produto"))?.label ?? "";
+    const produtoId = String(form.get("produto") ?? "");
+    const produto =
+      produtoId === "outro"
+        ? "Outro assunto comercial"
+        : productCatalog.find((p) => p.id === produtoId)?.whatsappLabel ?? "";
     const mensagem = compact ? "" : String(form.get("mensagem") ?? "").trim();
 
-    const text = [
-      "Olá! Vim pelo site da Bem Vista e gostaria de um orçamento.",
-      "",
-      `Nome: ${nome}`,
-      `Telefone: ${telefone}`,
-      `Produto de interesse: ${produto}`,
-      mensagem ? `Mensagem: ${mensagem}` : null,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
+    window.open(
+      whatsappUrl(
+        whatsappMessageFormulario({
+          nome,
+          telefone,
+          produto,
+          mensagem: mensagem || undefined,
+        }),
+      ),
+      "_blank",
+      "noopener,noreferrer",
+    );
     setLoading(false);
   };
 
   return (
     <div className={`card-premium relative flex h-full flex-col overflow-hidden ${className}`} id={id}>
-      <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-primary via-primary-light to-accent" />
-      <div className="border-b border-border/60 bg-gradient-to-r from-primary/5 to-accent/5 px-6 py-5">
+      <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-secondary via-accent to-accent-dark" />
+      <div className="border-b border-border/60 bg-gradient-to-r from-secondary/5 to-accent/5 px-6 py-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
-            <Blinds className="h-5 w-5" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#25D366] text-white">
+            <MessageCircle className="h-5 w-5" />
           </div>
           <div>
             <h3 className="font-extrabold text-primary-dark">{title}</h3>
-            <p className="text-xs text-text-muted">{subtitle}</p>
+            <p className="text-xs leading-relaxed text-text-muted">{subtitle}</p>
           </div>
         </div>
       </div>
@@ -73,14 +68,14 @@ export function LeadForm({
       <form onSubmit={handleSubmit} className="flex flex-1 flex-col space-y-4 p-6">
         <div>
           <label htmlFor={`${id}-nome`} className="mb-1.5 block text-sm font-semibold text-primary-dark">
-            Nome *
+            Nome completo *
           </label>
           <input
             id={`${id}-nome`}
             name="nome"
             required
             type="text"
-            placeholder="Seu nome"
+            placeholder="Informe seu nome"
             className="input-field"
           />
         </div>
@@ -103,36 +98,39 @@ export function LeadForm({
           </label>
           <select id={`${id}-produto`} name="produto" required className="input-field" defaultValue="">
             <option value="" disabled>
-              Selecione
+              Selecione uma opção
             </option>
-            {productOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
+            {productCatalog.map((product) => (
+              <option key={product.id} value={product.id}>
+                {product.id === "persianas"
+                  ? "Persianas (incl. manutenção e higienização)"
+                  : product.name}
               </option>
             ))}
+            <option value="outro">Outro assunto comercial</option>
           </select>
         </div>
         {!compact && (
           <div>
             <label htmlFor={`${id}-mensagem`} className="mb-1.5 block text-sm font-semibold text-primary-dark">
-              Mensagem
+              Observações
             </label>
             <textarea
               id={`${id}-mensagem`}
               name="mensagem"
               rows={3}
-              placeholder="Conte o que você precisa..."
+              placeholder="Descreva brevemente sua necessidade (opcional)"
               className="input-field resize-none"
             />
           </div>
         )}
         <button type="submit" disabled={loading} className="btn-whatsapp w-full disabled:opacity-70">
           {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <MessageCircle className="h-5 w-5" />}
-          Quero um orçamento
+          {copy.formSubmit}
         </button>
         <p className="flex items-center justify-center gap-1.5 text-center text-[11px] text-text-muted">
           <Lock className="h-3 w-3" />
-          Dados protegidos
+          Você será direcionado ao WhatsApp comercial com a mensagem preenchida
         </p>
       </form>
     </div>

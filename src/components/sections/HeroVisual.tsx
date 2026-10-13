@@ -18,7 +18,7 @@ export function HeroVisual() {
         transition={{ delay: 0.3 }}
         className="relative overflow-hidden rounded-2xl border border-border bg-white shadow-[0_16px_48px_rgba(26,66,138,0.12)]"
       >
-        <div className="flex h-52 items-center justify-center bg-gradient-to-br from-primary via-primary-light to-[#1a5a9e]">
+        <div className="flex h-52 items-center justify-center bg-gradient-to-br from-secondary via-primary-dark to-primary">
           <div className="text-center text-white">
             <Home className="mx-auto h-16 w-16 opacity-90" strokeWidth={1.25} />
             <p className="mt-3 text-lg font-bold">Parque Vista Bárbara</p>

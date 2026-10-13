@@ -10,7 +10,7 @@ const comparisons = [
 
 export function ROISection() {
   return (
-    <section id="resultados" className="section-padding bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
+    <section id="resultados" className="section-padding bg-gradient-to-br from-primary-dark via-secondary to-primary-dark text-white">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <ScrollReveal className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent">
@@ -37,16 +37,16 @@ export function ROISection() {
                   <ArrowDown className="h-5 w-5 shrink-0 text-accent" />
                   <div className="flex-1">
                     <p className="text-xs text-white/50">Depois</p>
-                    <p className="text-lg font-extrabold text-green-300">{item.after}</p>
+                    <p className="text-lg font-extrabold text-accent-light">{item.after}</p>
                   </div>
                 </div>
-                <div className="mt-4 flex items-center justify-center gap-1 rounded-lg bg-green-500/20 py-2">
+                <div className="mt-4 flex items-center justify-center gap-1 rounded-lg bg-accent/20 py-2">
                   {item.change.startsWith("+") ? (
-                    <TrendingUp className="h-4 w-4 text-green-400" />
+                    <TrendingUp className="h-4 w-4 text-accent-light" />
                   ) : (
-                    <TrendingDown className="h-4 w-4 text-green-400" />
+                    <TrendingDown className="h-4 w-4 text-accent-light" />
                   )}
-                  <span className="text-sm font-extrabold text-green-300">{item.change}</span>
+                  <span className="text-sm font-extrabold text-accent-light">{item.change}</span>
                 </div>
               </div>
             </ScrollReveal>

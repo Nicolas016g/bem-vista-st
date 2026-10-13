@@ -1,5 +1,6 @@
 import { MapPin, MessageCircle, Phone, Share2 } from "lucide-react";
-import { siteConfig, whatsappUrl } from "@/lib/site";
+import { siteConfig, whatsappMessageCanalComercial, whatsappUrl } from "@/lib/site";
+import { AlabardaFooter } from "../ui/AlabardaFooter";
 import { BemVistaLogo } from "../ui/BemVistaLogo";
 
 export function Footer() {
@@ -10,8 +11,9 @@ export function Footer() {
           <div>
             <BemVistaLogo variant="footer" theme="light" className="items-center text-center" />
             <p className="mt-4 text-sm leading-relaxed text-white/70">
-              Especialistas em persianas, toldos, redes de proteção e telas mosquiteira em{" "}
-              {siteConfig.city}. Atendimento institucional com foco em qualidade e confiança.
+              Empresa especializada em persianas, toldos, redes de proteção e telas mosquiteira em{" "}
+              {siteConfig.city}. Atendimento comercial conduzido de forma institucional, com canal
+              oficial pelo WhatsApp.
             </p>
           </div>
 
@@ -54,7 +56,7 @@ export function Footer() {
                 Facebook — Bem Vista
               </a>
               <a
-                href={whatsappUrl("Olá! Vim pelo site e gostaria de falar com a Bem Vista.")}
+                href={whatsappUrl(whatsappMessageCanalComercial())}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 font-semibold text-[#25D366] hover:text-[#4ade80]"
@@ -76,6 +78,10 @@ export function Footer() {
         <p className="mt-2 text-center text-[10px] text-white/40">
           Imagens ilustrativas. Consulte disponibilidade de produtos e serviços na região.
         </p>
+
+        <div className="mt-6 flex justify-center overflow-x-auto px-2">
+          <AlabardaFooter className="text-white/65" />
+        </div>
       </div>
     </footer>
   );

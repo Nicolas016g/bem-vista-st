@@ -1,0 +1,326 @@
+{
+  "catalog": [
+    {
+      "slug": "persiana-double-vision",
+      "name": "Persiana Double Vision",
+      "image": "/images/produtos/persiana-double-vision.webp",
+      "width": 1600,
+      "height": 1200,
+      "sourceLongEdge": 1600
+    },
+    {
+      "slug": "persiana-horizontal",
+      "name": "Persiana Horizontal",
+      "image": "/images/produtos/persiana-horizontal.webp",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "slug": "persiana-painel",
+      "name": "Persiana Painel",
+      "image": "/images/produtos/persiana-painel.webp",
+      "width": 1009,
+      "height": 1412,
+      "sourceLongEdge": 1412
+    },
+    {
+      "slug": "persiana-rolo-blackout",
+      "name": "Persiana Rolô Blackout",
+      "image": "/images/produtos/persiana-rolo-blackout.webp",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4032
+    },
+    {
+      "slug": "persiana-rolo-translucida",
+      "name": "Persiana Rolo Translúcida",
+      "image": "/images/produtos/persiana-rolo-translucida.webp",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4080
+    },
+    {
+      "slug": "persiana-romana",
+      "name": "Persiana Romana",
+      "image": "/images/produtos/persiana-romana.webp",
+      "width": 3840,
+      "height": 2160,
+      "sourceLongEdge": 3840
+    },
+    {
+      "slug": "persiana-vertical",
+      "name": "Persiana Vertical",
+      "image": "/images/produtos/persiana-vertical.webp",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4032
+    },
+    {
+      "slug": "rede-de-seguranca",
+      "name": "Rede de segurança",
+      "image": "/images/produtos/rede-de-seguranca.webp",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4000
+    },
+    {
+      "slug": "tela-mosqueteira",
+      "name": "Tela Mosqueteira",
+      "image": "/images/produtos/tela-mosqueteira.webp",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "slug": "toldo-vertical",
+      "name": "Toldo Vertical",
+      "image": "/images/produtos/toldo-vertical.webp",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4000
+    }
+  ],
+  "galleryCount": 29,
+  "gallery": [
+    {
+      "src": "/images/galeria/01-persiana-double-vision.webp",
+      "alt": "Instalação Bem Vista — Persiana Double Vision",
+      "label": "Persiana Double Vision",
+      "width": 1600,
+      "height": 1200,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/02-persiana-double-vision.webp",
+      "alt": "Instalação Bem Vista — Persiana Double Vision",
+      "label": "Persiana Double Vision",
+      "width": 1600,
+      "height": 1200,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/03-persiana-double-vision.webp",
+      "alt": "Instalação Bem Vista — Persiana Double Vision",
+      "label": "Persiana Double Vision",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/04-persiana-horizontal.webp",
+      "alt": "Instalação Bem Vista — Persiana Horizontal",
+      "label": "Persiana Horizontal",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/05-persiana-horizontal.webp",
+      "alt": "Instalação Bem Vista — Persiana Horizontal",
+      "label": "Persiana Horizontal",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/06-persiana-horizontal.webp",
+      "alt": "Instalação Bem Vista — Persiana Horizontal",
+      "label": "Persiana Horizontal",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/07-persiana-painel.webp",
+      "alt": "Instalação Bem Vista — Persiana Painel",
+      "label": "Persiana Painel",
+      "width": 1009,
+      "height": 1412,
+      "sourceLongEdge": 1412
+    },
+    {
+      "src": "/images/galeria/08-persiana-painel.webp",
+      "alt": "Instalação Bem Vista — Persiana Painel",
+      "label": "Persiana Painel",
+      "width": 768,
+      "height": 959,
+      "sourceLongEdge": 959
+    },
+    {
+      "src": "/images/galeria/09-persiana-rolo-blackout.webp",
+      "alt": "Instalação Bem Vista — Persiana Rolô Blackout",
+      "label": "Persiana Rolô Blackout",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4032
+    },
+    {
+      "src": "/images/galeria/10-persiana-rolo-blackout.webp",
+      "alt": "Instalação Bem Vista — Persiana Rolô Blackout",
+      "label": "Persiana Rolô Blackout",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4032
+    },
+    {
+      "src": "/images/galeria/11-persiana-rolo-blackout.webp",
+      "alt": "Instalação Bem Vista — Persiana Rolô Blackout",
+      "label": "Persiana Rolô Blackout",
+      "width": 2880,
+      "height": 3840,
+      "sourceLongEdge": 4032
+    },
+    {
+      "src": "/images/galeria/12-persiana-rolo-translucida.webp",
+      "alt": "Instalação Bem Vista — Persiana Rolo Translúcida",
+      "label": "Persiana Rolo Translúcida",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4080
+    },
+    {
+      "src": "/images/galeria/13-persiana-rolo-translucida.webp",
+      "alt": "Instalação Bem Vista — Persiana Rolo Translúcida",
+      "label": "Persiana Rolo Translúcida",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4080
+    },
+    {
+      "src": "/images/galeria/14-persiana-rolo-translucida.webp",
+      "alt": "Instalação Bem Vista — Persiana Rolo Translúcida",
+      "label": "Persiana Rolo Translúcida",
+      "width": 2880,
+      "height": 3840,
+      "sourceLongEdge": 4032
+    },
+    {
+      "src": "/images/galeria/15-persiana-romana.webp",
+      "alt": "Instalação Bem Vista — Persiana Romana",
+      "label": "Persiana Romana",
+      "width": 3840,
+      "height": 2160,
+      "sourceLongEdge": 3840
+    },
+    {
+      "src": "/images/galeria/16-persiana-romana.webp",
+      "alt": "Instalação Bem Vista — Persiana Romana",
+      "label": "Persiana Romana",
+      "width": 3840,
+      "height": 2160,
+      "sourceLongEdge": 3840
+    },
+    {
+      "src": "/images/galeria/17-persiana-romana.webp",
+      "alt": "Instalação Bem Vista — Persiana Romana",
+      "label": "Persiana Romana",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/18-persiana-vertical.webp",
+      "alt": "Instalação Bem Vista — Persiana Vertical",
+      "label": "Persiana Vertical",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4032
+    },
+    {
+      "src": "/images/galeria/19-persiana-vertical.webp",
+      "alt": "Instalação Bem Vista — Persiana Vertical",
+      "label": "Persiana Vertical",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4032
+    },
+    {
+      "src": "/images/galeria/20-persiana-vertical.webp",
+      "alt": "Instalação Bem Vista — Persiana Vertical",
+      "label": "Persiana Vertical",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4000
+    },
+    {
+      "src": "/images/galeria/21-rede-de-seguranca.webp",
+      "alt": "Instalação Bem Vista — Rede de segurança",
+      "label": "Rede de segurança",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4000
+    },
+    {
+      "src": "/images/galeria/22-rede-de-seguranca.webp",
+      "alt": "Instalação Bem Vista — Rede de segurança",
+      "label": "Rede de segurança",
+      "width": 900,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/23-rede-de-seguranca.webp",
+      "alt": "Instalação Bem Vista — Rede de segurança",
+      "label": "Rede de segurança",
+      "width": 900,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/24-tela-mosqueteira.webp",
+      "alt": "Instalação Bem Vista — Tela Mosqueteira",
+      "label": "Tela Mosqueteira",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/25-tela-mosqueteira.webp",
+      "alt": "Instalação Bem Vista — Tela Mosqueteira",
+      "label": "Tela Mosqueteira",
+      "width": 1600,
+      "height": 1200,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/26-tela-mosqueteira.webp",
+      "alt": "Instalação Bem Vista — Tela Mosqueteira",
+      "label": "Tela Mosqueteira",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    },
+    {
+      "src": "/images/galeria/27-toldo-vertical.webp",
+      "alt": "Instalação Bem Vista — Toldo Vertical",
+      "label": "Toldo Vertical",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4000
+    },
+    {
+      "src": "/images/galeria/28-toldo-vertical.webp",
+      "alt": "Instalação Bem Vista — Toldo Vertical",
+      "label": "Toldo Vertical",
+      "width": 3840,
+      "height": 2880,
+      "sourceLongEdge": 4000
+    },
+    {
+      "src": "/images/galeria/29-toldo-vertical.webp",
+      "alt": "Instalação Bem Vista — Toldo Vertical",
+      "label": "Toldo Vertical",
+      "width": 1200,
+      "height": 1600,
+      "sourceLongEdge": 1600
+    }
+  ],
+  "export": {
+    "format": "webp",
+    "maxLongEdge": 3840,
+    "webpQuality": 98,
+    "nearLosslessOnNativeScale": true,
+    "note": "Sem upscale artificial — usa resolução nativa do melhor arquivo do acervo."
+  }
+}

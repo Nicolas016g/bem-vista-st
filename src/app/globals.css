@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #2f6b4f;
-  --color-primary-dark: #1a4030;
-  --color-primary-light: #3d8a66;
-  --color-accent: #c9a227;
-  --color-accent-light: #e4c04a;
-  --color-accent-dark: #a6851a;
-  --color-surface: #f6f8f5;
-  --color-surface-alt: #e8efe9;
-  --color-text: #1a1f1c;
-  --color-text-muted: #4a554f;
-  --color-border: #d8e3dc;
+  /* Marrom e bege da logo + dourado e azul marinho (verde só como detalhe) */
+  --color-primary: #3d2e24;
+  --color-primary-dark: #1f1410;
+  --color-primary-light: #5c4033;
+  --color-secondary: #002277;
+  --color-secondary-light: #1a3d8f;
+  --color-brand: #009739;
+  --color-accent: #ffd700;
+  --color-accent-light: #ffe566;
+  --color-accent-dark: #d4af37;
+  --color-surface: #f8f4ef;
+  --color-surface-alt: #efe8df;
+  --color-text: #2b1b17;
+  --color-text-muted: #6b5348;
+  --color-border: #e5ddd3;
   --font-sans: var(--font-montserrat);
   --font-display: var(--font-montserrat);
 }
@@ -21,13 +25,13 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: var(--color-surface);
   color: var(--color-text);
   font-family: var(--font-montserrat), system-ui, sans-serif;
 }
 
 ::selection {
-  background: rgba(47, 107, 79, 0.15);
+  background: rgba(212, 175, 55, 0.25);
   color: var(--color-primary-dark);
 }
 
@@ -36,7 +40,7 @@ body {
 }
 
 .section-eyebrow {
-  @apply inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-primary;
+  @apply inline-flex items-center gap-2 rounded-full border border-secondary/15 bg-secondary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-secondary;
 }
 
 .section-title {
@@ -48,11 +52,11 @@ body {
 }
 
 .section-divider {
-  @apply mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-accent via-accent-light to-accent;
+  @apply mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-accent via-accent-light to-accent-dark;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary-light px-7 py-3.5 font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-secondary to-secondary-light px-7 py-3.5 font-semibold text-white shadow-lg shadow-secondary/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-secondary/30;
 }
 
 .btn-accent {
@@ -64,28 +68,58 @@ body {
 }
 
 .card {
-  @apply rounded-2xl border border-border/80 bg-white shadow-[0_4px_24px_rgba(26,64,47,0.06)] transition-all duration-300;
+  @apply rounded-2xl border border-border/80 bg-white shadow-[0_4px_24px_rgba(43,27,23,0.06)] transition-all duration-300;
 }
 
 .card-hover {
-  @apply hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_12px_40px_rgba(26,64,47,0.12)];
+  @apply hover:-translate-y-1 hover:border-secondary/20 hover:shadow-[0_12px_40px_rgba(0,34,119,0.1)];
 }
 
 .card-premium {
-  @apply rounded-2xl border border-white/80 bg-white shadow-[0_8px_40px_rgba(26,64,47,0.12)] backdrop-blur-sm;
+  @apply rounded-2xl border border-white/80 bg-white shadow-[0_8px_40px_rgba(43,27,23,0.1)] backdrop-blur-sm;
+}
+
+@keyframes project-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.project-marquee-track {
+  animation: project-marquee var(--marquee-duration, 45s) linear infinite;
+}
+
+.project-marquee-track.is-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-marquee-track {
+    animation: none;
+    overflow-x: auto;
+    max-width: 100%;
+  }
 }
 
 .input-field {
-  @apply w-full rounded-xl border border-border bg-surface/50 px-4 py-3.5 text-sm outline-none transition-all duration-200 placeholder:text-text-muted/60 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10;
+  @apply w-full rounded-xl border border-border bg-surface/50 px-4 py-3.5 text-sm outline-none transition-all duration-200 placeholder:text-text-muted/60 focus:border-secondary focus:bg-white focus:ring-4 focus:ring-secondary/10;
 }
 
 .pattern-dots {
-  background-image: radial-gradient(circle, rgba(47, 107, 79, 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(61, 46, 36, 0.07) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 60%, var(--color-accent-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-secondary) 50%,
+    var(--color-accent-dark) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

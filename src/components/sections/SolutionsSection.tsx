@@ -12,7 +12,7 @@ const solutions = [
     badgeClass: "badge-ready",
     description: "Solução completa para grandes corporações. Infraestrutura dedicada, SLA 99.99% e gerente exclusivo.",
     icon: Layers,
-    color: "from-emerald-500 via-green-600 to-teal-700",
+    color: "from-secondary via-secondary-light to-primary-dark",
     available: true,
     featured: true,
   },

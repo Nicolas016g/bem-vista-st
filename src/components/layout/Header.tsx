@@ -2,13 +2,14 @@
 
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { whatsappUrl } from "@/lib/site";
+import { whatsappMessageOrcamentoGeral, whatsappUrl, copy } from "@/lib/site";
 import { BemVistaLogo } from "../ui/BemVistaLogo";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Diferenciais", href: "#diferenciais" },
   { label: "Produtos", href: "#produtos" },
+  { label: "Galeria", href: "#galeria" },
   { label: "Sobre", href: "#sobre" },
   { label: "Contato", href: "#contato" },
 ];
@@ -50,7 +51,7 @@ export function Header() {
               href={link.href}
               className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
                 scrolled
-                  ? "text-text-muted hover:bg-primary/5 hover:text-primary"
+                  ? "text-text-muted hover:bg-secondary/5 hover:text-secondary"
                   : "text-white/90 hover:bg-white/10 hover:text-white"
               }`}
             >
@@ -61,7 +62,7 @@ export function Header() {
 
         <div className="hidden lg:flex">
           <a
-            href={whatsappUrl("Olá! Gostaria de solicitar um orçamento com a Bem Vista.")}
+            href={whatsappUrl(whatsappMessageOrcamentoGeral())}
             target="_blank"
             rel="noopener noreferrer"
             className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-colors ${
@@ -69,12 +70,12 @@ export function Header() {
             }`}
           >
             <MessageCircle className="h-4 w-4" />
-            Quero um orçamento
+            {copy.ctaWhatsApp}
           </a>
         </div>
 
         <button
-          className={`rounded-lg p-2 lg:hidden ${scrolled ? "text-primary" : "text-white"}`}
+          className={`rounded-lg p-2 lg:hidden ${scrolled ? "text-secondary" : "text-white"}`}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -95,13 +96,13 @@ export function Header() {
             </a>
           ))}
           <a
-            href={whatsappUrl("Olá! Gostaria de solicitar um orçamento com a Bem Vista.")}
+            href={whatsappUrl(whatsappMessageOrcamentoGeral())}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp mt-3 w-full text-center"
             onClick={() => setOpen(false)}
           >
-            Quero um orçamento
+            {copy.ctaWhatsApp}
           </a>
         </div>
       )}

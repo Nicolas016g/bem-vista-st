@@ -1,30 +1,15 @@
-import { CreditCard, ShieldCheck, Truck, BadgePercent } from "lucide-react";
+import { BadgePercent, CreditCard, ShieldCheck, Truck, type LucideIcon } from "lucide-react";
+import { copy, trustDifferentials } from "@/lib/site";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { SectionHeader } from "../ui/SectionHeader";
 import { CardCarousel, CarouselCard } from "../ui/CardCarousel";
 
-const reasons = [
-  {
-    icon: CreditCard,
-    title: "Pagamento facilitado",
-    text: "Condições especiais para você investir no conforto do seu ambiente com tranquilidade.",
-  },
-  {
-    icon: Truck,
-    title: "Entrega rápida",
-    text: "Agilidade do orçamento à entrega, respeitando prazos e a sua necessidade.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Instalação gratuita e segura",
-    text: "Equipe qualificada realiza a instalação com segurança e acabamento impecável.",
-  },
-  {
-    icon: BadgePercent,
-    title: "Preços competitivos",
-    text: "Excelente custo-benefício com produtos de qualidade e atendimento profissional.",
-  },
-];
+const iconMap: Record<(typeof trustDifferentials)[number]["icon"], LucideIcon> = {
+  "credit-card": CreditCard,
+  truck: Truck,
+  "shield-check": ShieldCheck,
+  "badge-percent": BadgePercent,
+};
 
 export function WhySection() {
   return (
@@ -33,26 +18,29 @@ export function WhySection() {
       <div className="relative mx-auto max-w-7xl px-4 md:px-6">
         <ScrollReveal>
           <SectionHeader
-            eyebrow="Diferenciais"
-            title="Por que nossos clientes escolhem a Bem Vista?"
-            subtitle="Mais de confiança, qualidade e cuidado em cada detalhe — da consultoria à instalação e manutenção dos seus produtos."
+            eyebrow="Confiança"
+            title={copy.whyTitle}
+            subtitle={copy.whySubtitle}
             align="center"
           />
         </ScrollReveal>
 
         <ScrollReveal delay={0.1} className="mt-14">
           <CardCarousel>
-            {reasons.map((item) => (
-              <CarouselCard key={item.title}>
-                <div className="flex h-full flex-col p-6 text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                    <item.icon className="h-7 w-7 text-primary" />
+            {trustDifferentials.map((item) => {
+              const Icon = iconMap[item.icon];
+              return (
+                <CarouselCard key={item.id}>
+                  <div className="flex h-full flex-col p-6 text-center">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/10">
+                      <Icon className="h-7 w-7 text-secondary" />
+                    </div>
+                    <h3 className="mt-5 text-lg font-extrabold text-primary-dark">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-muted">{item.text}</p>
                   </div>
-                  <h3 className="mt-5 text-lg font-extrabold text-primary-dark">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-text-muted">{item.text}</p>
-                </div>
-              </CarouselCard>
-            ))}
+                </CarouselCard>
+              );
+            })}
           </CardCarousel>
         </ScrollReveal>
       </div>

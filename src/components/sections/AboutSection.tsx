@@ -1,11 +1,16 @@
 import { MessageCircle } from "lucide-react";
-import { whatsappUrl } from "@/lib/site";
+import {
+  copy,
+  whatsappMessageCanalComercial,
+  whatsappMessageOrcamentoGeral,
+  whatsappUrl,
+} from "@/lib/site";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { SectionHeader } from "../ui/SectionHeader";
-import { BemVistaLogo } from "../ui/BemVistaLogo";
+import { ProjectPhotoMarquee } from "../ui/ProjectPhotoMarquee";
 
 const aboutText =
-  "A Bem Vista Persianas é especialista em persianas, cortinas, toldos, tela de proteção e tela mosquiteira personalizada. Atendemos online, na loja e também realizamos visita de consultoria, visita técnica para medidas e instalação profissional de todos os produtos. Oferecemos ainda limpeza, manutenção e reparos completos. Soluções modernas, rápidas e personalizadas para seu ambiente.";
+  "A Bem Vista Persianas é referência em soluções para ambientes residenciais e comerciais em São Carlos e região. Atuamos com persianas, cortinas, toldos, redes de proteção e telas mosquiteira sob medida, além de consultoria técnica, instalação profissional, manutenção e higienização. O relacionamento com clientes e parceiros é conduzido de forma institucional, com atendimento comercial dedicado pelo WhatsApp.";
 
 export function AboutSection() {
   return (
@@ -13,33 +18,39 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <ScrollReveal>
           <SectionHeader
-            eyebrow="Sobre nós"
-            title="Institucional Bem Vista"
-            subtitle="Referência em soluções para ambientes residenciais e comerciais em São Carlos."
+            eyebrow="Institucional"
+            title="Compromisso com qualidade e atendimento especializado"
+            subtitle="Empresa consolidada no mercado de soluções para ambientes, com processos claros e equipe qualificada."
             align="center"
           />
         </ScrollReveal>
 
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <ScrollReveal delay={0.1} className="flex justify-center">
-            <div className="card flex w-full max-w-md items-center justify-center bg-white p-10 md:p-14">
-              <BemVistaLogo variant="about" className="items-center text-center" />
-            </div>
+            <ProjectPhotoMarquee />
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
             <p className="text-lg leading-relaxed text-text-muted md:text-xl">{aboutText}</p>
-            <a
-              href={whatsappUrl(
-                "Olá! Vim pelo site da Bem Vista e quero transformar meu ambiente agora. Gostaria de falar com um especialista.",
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp mt-8 !px-8 !py-4 text-base"
-            >
-              <MessageCircle className="h-5 w-5" />
-              Quero transformar meu ambiente agora!
-            </a>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={whatsappUrl(whatsappMessageOrcamentoGeral())}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp !px-8 !py-4 text-base"
+              >
+                <MessageCircle className="h-5 w-5" />
+                {copy.ctaOrcamento}
+              </a>
+              <a
+                href={whatsappUrl(whatsappMessageCanalComercial())}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-accent !px-8 !py-4 text-base"
+              >
+                {copy.ctaAtendimento}
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </div>

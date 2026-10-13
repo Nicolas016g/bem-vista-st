@@ -50,7 +50,7 @@ export function TestimonialsSection() {
                     <Star key={j} className="h-4 w-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-green-100 px-3 py-1 text-xs font-extrabold text-green-700">
+                <span className="mt-3 inline-flex items-center gap-1 rounded-full bg-accent/15 px-3 py-1 text-xs font-extrabold text-primary-dark">
                   <TrendingUp className="h-3 w-3" />
                   {t.result}
                 </span>
@@ -58,7 +58,7 @@ export function TestimonialsSection() {
                   &ldquo;{t.text}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-light text-sm font-bold text-white shadow-md">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-secondary-light text-sm font-bold text-white shadow-md">
                     {t.avatar}
                   </div>
                   <div>

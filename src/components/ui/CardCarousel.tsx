@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, type ReactNode } from "react";
 
@@ -23,7 +24,7 @@ export function CardCarousel({ children, className = "" }: CardCarouselProps) {
       <button
         type="button"
         onClick={() => scroll("left")}
-        className="absolute -left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white shadow-lg transition hover:scale-105 md:-left-5"
+        className="absolute -left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white shadow-lg transition hover:scale-105 active:scale-95 md:-left-5"
         aria-label="Anterior"
       >
         <ChevronLeft className="h-5 w-5 text-primary" />
@@ -31,7 +32,7 @@ export function CardCarousel({ children, className = "" }: CardCarouselProps) {
       <button
         type="button"
         onClick={() => scroll("right")}
-        className="absolute -right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white shadow-lg transition hover:scale-105 md:-right-5"
+        className="absolute -right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white shadow-lg transition hover:scale-105 active:scale-95 md:-right-5"
         aria-label="Próximo"
       >
         <ChevronRight className="h-5 w-5 text-primary" />
@@ -47,11 +48,18 @@ export function CardCarousel({ children, className = "" }: CardCarouselProps) {
 }
 
 export function CarouselCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <div
+    <motion.div
+      initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={reduceMotion ? undefined : { y: -6 }}
       className={`card card-hover w-[min(100%,20rem)] shrink-0 snap-center overflow-hidden sm:w-[22rem] ${className}`}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

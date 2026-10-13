@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { whatsappMessageOrcamentoGeral, whatsappUrl, copy } from "@/lib/site";
@@ -17,6 +18,7 @@ const navLinks = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -32,7 +34,10 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
+    <motion.header
+      initial={reduceMotion ? false : { y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "border-b border-border bg-white/95 shadow-md backdrop-blur-md"
@@ -106,6 +111,6 @@ export function Header() {
           </a>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }

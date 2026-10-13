@@ -21,13 +21,13 @@ export function ProductsSection() {
         <ScrollReveal delay={0.1} className="mt-14">
           <CardCarousel>
             {productCatalog.map((product) => (
-              <CarouselCard key={product.id} className="w-[min(100%,22rem)] sm:w-[24rem]">
-                <div className="relative h-52">
+              <CarouselCard key={product.id} className="group w-[min(100%,22rem)] sm:w-[24rem]">
+                <div className="relative h-52 overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 384px"
                     unoptimized
                   />

@@ -96,11 +96,124 @@ body {
   animation-play-state: paused;
 }
 
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.hero-ken-burns {
+  animation: hero-ken-burns 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(12px, -18px);
+  }
+}
+
+.animate-float-soft {
+  animation: float-soft 9s ease-in-out infinite;
+}
+
+.animate-float-soft-delayed {
+  animation: float-soft 11s ease-in-out infinite reverse;
+}
+
+.cta-banner-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--color-primary-dark) 0%,
+    var(--color-secondary) 45%,
+    var(--color-secondary-light) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  animation: btn-shine 4.5s ease-in-out infinite;
+}
+
+@keyframes btn-shine {
+  0%,
+  70%,
+  100% {
+    transform: translateX(-120%);
+  }
+  85% {
+    transform: translateX(120%);
+  }
+}
+
+.whatsapp-pulse::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: rgba(37, 211, 102, 0.45);
+  animation: whatsapp-ring 2.2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes whatsapp-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .project-marquee-track {
     animation: none;
     overflow-x: auto;
     max-width: 100%;
+  }
+
+  .hero-ken-burns,
+  .animate-float-soft,
+  .animate-float-soft-delayed,
+  .cta-banner-gradient,
+  .btn-shine::after,
+  .whatsapp-pulse::before {
+    animation: none;
   }
 }
 

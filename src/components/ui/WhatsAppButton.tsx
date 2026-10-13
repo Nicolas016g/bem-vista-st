@@ -21,7 +21,7 @@ export function WhatsAppButton({
       className={
         label
           ? className
-          : `fixed bottom-20 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 md:bottom-6 ${className}`
+          : `whatsapp-pulse fixed bottom-20 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 md:bottom-6 ${className}`
       }
       aria-label="WhatsApp"
     >

@@ -5,7 +5,7 @@ import { BemVistaLogo } from "../ui/BemVistaLogo";
 
 export function Footer() {
   return (
-    <footer id="contato" className="border-t border-white/10 bg-primary-dark text-white/80">
+    <footer className="border-t border-white/10 bg-primary-dark text-white/80">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-6">
         <div className="grid gap-10 md:grid-cols-3">
           <div>

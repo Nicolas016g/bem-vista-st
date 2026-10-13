@@ -107,9 +107,8 @@ export const galleryPhotos = media.gallery.map((photo) => ({
   height: photo.height ?? 1280,
 }));
 
-export const heroBackground =
-  media.catalog.find((c) => c.slug === "persiana-horizontal")?.image ??
-  "/images/produtos/persiana-horizontal.webp";
+/** Hero: #3 — Persiana Vertical 5 */
+export const heroBackground = "/images/hero/site-background.png";
 
 export function whatsappUrl(message: string) {
   return `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;

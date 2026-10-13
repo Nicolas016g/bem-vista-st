@@ -7,9 +7,21 @@ import { LeadForm } from "../ui/LeadForm";
 
 export function CTABanner() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-primary-dark via-secondary to-secondary-light py-16 md:py-20">
+    <section
+      id="contato"
+      className="cta-banner-gradient relative overflow-hidden py-16 md:py-20"
+    >
+      <div
+        className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-accent/25 blur-3xl animate-float-soft"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/10 blur-3xl animate-float-soft-delayed"
+        aria-hidden
+      />
+
       <div className="relative mx-auto max-w-7xl px-4 md:px-6">
-        <ScrollReveal className="text-center">
+        <ScrollReveal className="text-center" variant="scale">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-white/90">
             Atendimento comercial
           </span>
@@ -24,13 +36,13 @@ export function CTABanner() {
             href={whatsappUrl(whatsappMessageOrcamentoGeral())}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-whatsapp mx-auto mt-6 inline-flex !px-8 !py-4 text-base"
+            className="btn-whatsapp btn-shine mx-auto mt-6 inline-flex !px-8 !py-4 text-base"
           >
             <MessageCircle className="h-5 w-5" />
             {copy.ctaWhatsApp}
           </a>
         </ScrollReveal>
-        <ScrollReveal delay={0.1} className="mx-auto mt-10 max-w-md">
+        <ScrollReveal delay={0.12} className="mx-auto mt-10 max-w-md" variant="up">
           <LeadForm compact id="lead-form" />
         </ScrollReveal>
       </div>

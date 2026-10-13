@@ -26,11 +26,11 @@ export function AboutSection() {
         </ScrollReveal>
 
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <ScrollReveal delay={0.1} className="flex justify-center">
+          <ScrollReveal delay={0.1} className="flex justify-center" variant="scale">
             <ProjectPhotoMarquee />
           </ScrollReveal>
 
-          <ScrollReveal delay={0.15}>
+          <ScrollReveal delay={0.15} variant="left">
             <p className="text-lg leading-relaxed text-text-muted md:text-xl">{aboutText}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
